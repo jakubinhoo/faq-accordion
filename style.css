@@ -25,7 +25,6 @@ body {
   flex-direction: column;
   justify-content: center;
   background-repeat: no-repeat;
-  transition: all 0.3s linear;
   overflow: hidden;
 }
 
@@ -49,19 +48,18 @@ h2 svg {
 }
 
 .question {
-  width: 400px;
+  width: 420px;
   border-bottom: 1px solid hsl(240, 5%, 91%);
   padding: 0.4rem;
-  transition: all 0.5s linear;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .question:hover {
   cursor: pointer;
-}
-
-p {
-  display: none;
-  opacity: 0.75;
 }
 
 .main-container {
@@ -125,4 +123,30 @@ footer {
 
 footer a {
   color: hsl(14, 88%, 65%);
+}
+
+.answer {
+  max-height: 0px;
+  max-width: 80%;
+  overflow: hidden;
+}
+
+.faq.active .question {
+  font-weight: bold;
+}
+
+.faq.active .answer {
+  max-height: 5rem;
+}
+
+.faq.active svg {
+  transform: rotate(180deg);
+}
+
+.answer {
+  transition: max-height 1.4s ease;
+}
+
+svg {
+  transition: transform 1.4s ease;
 }
